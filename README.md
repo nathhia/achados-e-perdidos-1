@@ -1,1 +1,1 @@
-# achados-e-perdidos
+# Este projeto tem como objetivo criar um sistema de catalogação e busca para objetos que foram perdidos e posteriormente encontrados, nas dependências da universidade [UFRPE]. Será implementado utilizando paradigma de Programação Orientada a Objetos na linguagem Java e servirá como projeto da disciplina de Introdução à Programação 2, sob tutoria do professor André Câmara.
