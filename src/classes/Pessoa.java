@@ -2,10 +2,10 @@ package classes;
 
 public class Pessoa {
 	
-	private String nome;
-    private String email;
-    private String telefone;
-    private String cpf;
+	protected String nome;
+    protected String email;
+    protected String telefone;
+    protected String cpf;
 
     @Override
     public String toString() {
