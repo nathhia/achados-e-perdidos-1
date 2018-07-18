@@ -76,13 +76,13 @@ public class Aluno extends Pessoa{
 	}
 	
 	
-	public boolean cadastrarAluno(String newName, String newEmail, String newCPF, String newTelefone, String newLogin, String newSenha ){
-		this.nome = newName;
-		this.email = newEmail;
-		this.cpf = newCPF;
-		this.telefone = newTelefone;
-		this.login = newLogin;
-		this.senha = newSenha;
+	public boolean cadastrarAluno(Aluno aluno){
+		this.nome = nome;
+		this.email = email;
+		this.cpf = cpf;
+		this.telefone = telefone;
+		this.login = login;
+		this.senha = senha;
 		this.id = id;
 		id++;
 		return true;

@@ -226,20 +226,22 @@ public class Item {
 		if (quantidade != other.quantidade)
 			return false;
 		return true;
+	
 	}
-
-	public boolean cadastrarItem(String newTipo, String newCor, int newQtd, Departamento newDepartamento, Aluno newAluno, String newDescricao, boolean perdido, boolean achado, Date newDate){
-		this.tipo = newTipo;
-		this.cor = newCor;
-		this.quantidade = newQtd;
-		this.departamento = newDepartamento;
-		this.aluno = newAluno;
-		this.descricao = newDescricao;
+	
+	
+	public boolean cadastrarItem(Item item){
+		this.tipo = item.tipo;
+		this.cor = item.cor;
+		this.quantidade = item.quantidade;
+		this.departamento = item.departamento;
+		this.aluno = item.aluno;
+		this.descricao = item.descricao;
 		if(perdido == true) achado = false;
 		else achado = true;
 		this.perdido = perdido;
 		this.achado = achado;
-		this.data = newDate;
+		this.data = item.Date;
 		return true;
 	}
 
