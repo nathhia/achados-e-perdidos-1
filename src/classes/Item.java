@@ -241,7 +241,7 @@ public class Item {
 		else achado = true;
 		this.perdido = perdido;
 		this.achado = achado;
-		this.data = item.Date;
+		this.data = item.data;
 		return true;
 	}
 
