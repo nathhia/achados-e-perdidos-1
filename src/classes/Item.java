@@ -237,10 +237,10 @@ public class Item {
 		this.departamento = item.departamento;
 		this.aluno = item.aluno;
 		this.descricao = item.descricao;
-		if(perdido == true) achado = false;
-		else achado = true;
-		this.perdido = perdido;
-		this.achado = achado;
+		if(item.perdido == true) item.achado = false;
+		else item.achado = true;
+		this.perdido = item. perdido;
+		this.achado = item.achado;
 		this.data = item.data;
 		return true;
 	}
