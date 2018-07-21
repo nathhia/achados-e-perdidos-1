@@ -5,11 +5,11 @@ import java.util.Date;
 
 public class Item {
 	
-	private int id;
+	private int id = 1;
+	private String tipo;
 	private String cor;
 	private String descricao;
 	private int quantidade;
-	private String tipo;
 	private boolean achado;
 	private boolean perdido;
 	private boolean devolvido;
@@ -133,6 +133,16 @@ public class Item {
 	}
 
 
+	public String getTipo() {
+		return tipo;
+	}
+
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+
 	public ArrayList getNome() {
 		return nome;
 	}
@@ -229,6 +239,11 @@ public class Item {
 	
 	}
 	
+	public int incrementaId()
+	{
+		return this.id + 1;
+	}
+	
 	
 	public boolean cadastrarItem(Item item){
 		this.tipo = item.tipo;
@@ -244,5 +259,18 @@ public class Item {
 		this.data = item.data;
 		return true;
 	}
+	
+	public void status()
+	{
+		if(this.perdido == true) System.out.println("--Objeto perdido--");
+		else System.out.println("--Objeto encontrado--");
+		System.out.println("Tipo: "+this.tipo);
+		System.out.println("Cor: "+this.cor);
+		System.out.println("Quantidade: "+this.quantidade);
+		System.out.println("Descricao: "+this.descricao);
+		System.out.println("Id: "+this.id);
+		System.out.println();
+	}
 
 }
+
