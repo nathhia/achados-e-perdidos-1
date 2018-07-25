@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="view.TelaCadastroItemAchadoController">
+   <children>
+      <ImageView fx:id="planodefundo" fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../plano%20de%20fundo%20das%20telas.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="216.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CADASTRAR ITEM ACHADO">
+         <font>
+            <Font name="Agency FB" size="47.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="113.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo:">
+         <font>
+            <Font name="Agency FB" size="34.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="113.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cor:">
+         <font>
+            <Font name="Agency FB" size="34.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="113.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantidade:">
+         <font>
+            <Font name="Agency FB" size="34.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="113.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descrição (descreva o mais detalhado possivel): ">
+         <font>
+            <Font name="Agency FB" size="34.0" />
+         </font>
+      </Text>
+      <TextField fx:id="tfTipo" layoutX="201.0" layoutY="141.0" prefHeight="30.0" prefWidth="276.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfCor" layoutX="201.0" layoutY="204.0" prefHeight="30.0" prefWidth="276.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfQuantidade" layoutX="260.0" layoutY="266.0" prefHeight="37.0" prefWidth="73.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfDescricao" layoutX="109.0" layoutY="372.0" prefHeight="127.0" prefWidth="592.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <Button fx:id="btVoltar" layoutX="105.0" layoutY="519.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="110.0" text="Voltar">
+         <font>
+            <Font name="Agency FB" size="28.0" />
+         </font>
+      </Button>
+      <Button fx:id="btCadastrar" layoutX="574.0" layoutY="517.0" mnemonicParsing="false" text="Cadastrar">
+         <font>
+            <Font name="Agency FB" size="28.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

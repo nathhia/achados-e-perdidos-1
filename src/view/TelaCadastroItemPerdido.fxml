@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1">
+   <children>
+      <ImageView fx:id="planodefundo" fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../plano%20de%20fundo%20das%20telas.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="216.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CADASTRAR ITEM PERDIDO">
+         <font>
+            <Font name="Agency FB" size="47.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="113.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo:">
+         <font>
+            <Font name="Agency FB" size="34.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="113.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cor:">
+         <font>
+            <Font name="Agency FB" size="34.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="113.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantidade:">
+         <font>
+            <Font name="Agency FB" size="34.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="113.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descrição (descreva o mais detalhado possivel): ">
+         <font>
+            <Font name="Agency FB" size="34.0" />
+         </font>
+      </Text>
+      <TextField layoutX="201.0" layoutY="141.0" prefHeight="30.0" prefWidth="276.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="201.0" layoutY="204.0" prefHeight="30.0" prefWidth="276.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="260.0" layoutY="266.0" prefHeight="37.0" prefWidth="73.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="109.0" layoutY="389.0" prefHeight="170.0" prefWidth="592.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>

@@ -26,7 +26,7 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
-		int cont=0;
+		int cont=0;	
 		Item itemTemp = new Item();
 		Item[] item = new Item[100];
 		
