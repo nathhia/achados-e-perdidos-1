@@ -14,18 +14,19 @@ public class TelaCadastroController {
 	private Main main;
 	@FXML private Button btItemAchado;
 	@FXML private Button btItemPerdido;
-	
+	@FXML private Button btVoltar;
 	
 	public void initialize(){
 		this.main = Main.getInstancia();	
-			this.btItemAchado.setOnAction(e2 -> {
+			this.btItemPerdido.setOnAction(e2 -> {
 				main = Main.getInstancia();
 				 Stage stage;
-				 Parent root;	
+				 Parent root;
+				 
 				 try{
 					 
-					 stage=(Stage) btItemAchado.getScene().getWindow();
-					 root = (Parent) FXMLLoader.load(getClass().getResource("/view/TelaCadastroItemAchado.fxml"));
+					 stage=(Stage) btItemPerdido.getScene().getWindow();
+					 root = (Parent) FXMLLoader.load(getClass().getResource("/view/TelaCadastroItemPerdido.fxml"));
 					 Scene scene = new Scene(root);
 					 stage = main.getPalcoPrincipal();
 					 stage.setScene(scene);
@@ -35,14 +36,14 @@ public class TelaCadastroController {
 				 }
 				
 			});
-			this.btItemPerdido.setOnAction(e -> {
+			this.btItemAchado.setOnAction(e -> {
 				main = Main.getInstancia();
 				Stage stage;
 				Parent root;
 				try {
 					
-					stage=(Stage) btItemPerdido.getScene().getWindow();
-					root = (Parent) FXMLLoader.load(getClass().getResource("/view/TelaCadastroItemPerdido.fxml"));
+					stage=(Stage) btItemAchado.getScene().getWindow();
+					root = (Parent) FXMLLoader.load(getClass().getResource("/view/TelaCadastroItemAchado.fxml"));
 					Scene scene = new Scene(root);
 					stage = main.getPalcoPrincipal();
 					stage.setScene(scene);
@@ -51,8 +52,25 @@ public class TelaCadastroController {
 					e1.printStackTrace();
 				}
 			});
+			this.btVoltar.setOnAction(e4 ->{
+				Stage stage;
+				Parent root;
+			try {
+				root = (Parent) FXMLLoader.load(getClass().getResource("/view/Main.fxml"));
+				Scene scene = new Scene(root);
+				stage = main.getPalcoPrincipal();
+				stage.setScene(scene);
+				main.changeStage(stage);
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+				
+				
+			});
 			
 			
 	}
+	
 
 }
