@@ -1,4 +1,4 @@
-package classes;
+package model;
 import java.util.Scanner;
 import java.util.Date;
 import java.util.Collection; 

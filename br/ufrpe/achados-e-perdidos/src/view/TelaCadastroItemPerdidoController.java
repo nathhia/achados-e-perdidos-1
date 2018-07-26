@@ -3,7 +3,7 @@ package view;
 import javafx.scene.control.TextField;
 import java.io.IOException;
 
-import classes.Item;
+import model.Item;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
