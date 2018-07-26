@@ -1,4 +1,4 @@
-package classes;
+package model;
 
 public class Administrador extends Pessoa {
 	private String login;
