@@ -56,7 +56,7 @@ public class TelaCadastroController {
 				Stage stage;
 				Parent root;
 			try {
-				root = (Parent) FXMLLoader.load(getClass().getResource("/view/Main.fxml"));
+				root = (Parent) FXMLLoader.load(getClass().getResource("/view/TelaInicial.fxml"));
 				Scene scene = new Scene(root);
 				stage = main.getPalcoPrincipal();
 				stage.setScene(scene);
