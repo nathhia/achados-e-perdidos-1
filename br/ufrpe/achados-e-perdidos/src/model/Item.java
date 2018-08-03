@@ -257,6 +257,7 @@ public class Item {
 		this.perdido = item. perdido;
 		this.achado = item.achado;
 		this.data = item.data;
+		this.id = item.id;
 		return true;
 	}
 	

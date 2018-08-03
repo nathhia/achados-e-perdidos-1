@@ -1,7 +1,17 @@
 package view;
 
 import javafx.scene.control.TextField;
+
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.io.BufferedWriter;
+import java.io.BufferedReader;
+
+import com.google.gson.Gson;
 
 import model.Item;
 import javafx.fxml.FXML;
@@ -26,19 +36,62 @@ public void initialize(){
 	this.main = Main.getInstancia();
 	this.btCadastrar.setOnAction(e ->{
 		
-		Item item = new Item();
-		item.setTipo(tfTipo.getText());
-		item.setCor(tfCor.getText());
-		item.setQuantidade(Integer.parseInt(tfQuantidade.getText()));
-		item.setDescricao(tfDescricao.getText());
-		item.cadastrarItem(item);
+		int cont=0;	
+		Item itemTemp = new Item();
+		Item itemPerdido = new Item();
+		Gson gson = new Gson();
+		String json;
+		
+		File arquivo = new File("cont.txt");
+		File arquivo3 = new File("perdidos.txt");
+		
+		
+		try( FileReader fr = new FileReader(arquivo) ){
+		
+			cont = fr.read();
+		
+		}catch(IOException ex){
+		  ex.printStackTrace();
+		}
+		
+				
+		itemTemp.setTipo(tfTipo.getText());
+		itemTemp.setCor(tfCor.getText());
+		itemTemp.setQuantidade(Integer.parseInt(tfQuantidade.getText()));
+		itemTemp.setDescricao(tfDescricao.getText());
+		itemTemp.setId(cont);
+		itemPerdido.cadastrarItem(itemTemp);
+		json = gson.toJson(itemPerdido);
+	
+		
+		try( FileWriter fw = new FileWriter(arquivo3, true) ){
+			
+				fw.write(json);
+		
+		    fw.flush();
+		    fw.close();
+		}catch(IOException ex){
+		  ex.printStackTrace();
+		}
+		
+		cont++;
+		
+		try( FileWriter fw = new FileWriter(arquivo) ){
+			char c = (char)cont;
+		    fw.write(cont);
+		   
+		    fw.flush();
+		 //   fw.close();
+		}catch(IOException ex){
+		  ex.printStackTrace();
+		}
 		
 		Alert alert = new Alert(AlertType.ERROR);
 		alert.setTitle("Cadastrado!");
 		alert.setHeaderText("Cadastrado com sucesso!");
 		alert.setContentText("");
 		alert.showAndWait();
-		this.retornar();
+		this.retornar();		
 		
 	});
 	this.btVoltar.setOnAction(e ->{

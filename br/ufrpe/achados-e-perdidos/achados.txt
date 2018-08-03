@@ -1,0 +1,1 @@
+{"id":52,"tipo":"Um negócio","cor":"Sem cor","descricao":"Achei","quantidade":10,"achado":true,"perdido":false,"devolvido":false,"nome":[]}

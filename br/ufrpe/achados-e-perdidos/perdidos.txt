@@ -1,0 +1,1 @@
+{"id":48,"tipo":"Esperança","cor":"Não tem","descricao":"Perdi ao entrar na universidade","quantidade":1,"achado":true,"perdido":false,"devolvido":false,"nome":[]}{"id":51,"tipo":"Coisa","cor":"Não sei","descricao":"Perdi.","quantidade":1,"achado":true,"perdido":false,"devolvido":false,"nome":[]}

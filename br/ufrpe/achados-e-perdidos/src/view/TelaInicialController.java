@@ -41,6 +41,23 @@ public class TelaInicialController {
 				
 			});
 			
+			this.btListarItens.setOnAction(e ->{
+				main = Main.getInstancia();
+				 Stage stage;
+				 Parent root;	
+				 try{
+					 
+					 stage=(Stage) btListarItens.getScene().getWindow();
+					 root = (Parent) FXMLLoader.load(getClass().getResource("/view/TelaListarItens.fxml"));
+					 Scene scene = new Scene(root);
+					 stage = main.getPalcoPrincipal();
+					 stage.setScene(scene);
+					 main.changeStage(stage);
+				 }catch(IOException e3){
+					 e3.printStackTrace(); 
+				 }
+				
+			});
 			
 	}
 }
