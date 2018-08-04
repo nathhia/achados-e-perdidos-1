@@ -35,18 +35,18 @@ public class TelaCadastroItemAchadoController {
 		this.main = Main.getInstancia();
 		this.btCadastrar.setOnAction(e ->{
 
-			Integer cont = 0;
+			Integer contAchado = 0;
 			Item itemTemp = new Item();
 			Item itemAchado = new Item();
 			Gson gson = new Gson();
 			String json;
 			
-			File arquivo = new File("cont.txt");
-			File arquivo2 = new File("achados.txt");
+			File arquivo = new File("contAchado.bin");
+			File arquivo2 = new File("achados.json");
 			
 			try( FileReader fr = new FileReader(arquivo) ){
 				
-				cont = fr.read();
+				contAchado = fr.read();
 			
 			}catch(IOException ex){
 			  ex.printStackTrace();
@@ -57,7 +57,7 @@ public class TelaCadastroItemAchadoController {
 			itemTemp.setCor(tfCor.getText());
 			itemTemp.setQuantidade(Integer.parseInt(tfQuantidade.getText()));
 			itemTemp.setDescricao(tfDescricao.getText());
-			itemTemp.setId(cont);
+			itemTemp.setId(contAchado+100);
 			itemAchado.cadastrarItem(itemTemp);
 			json = gson.toJson(itemAchado);
 		
@@ -72,11 +72,11 @@ public class TelaCadastroItemAchadoController {
 			  ex.printStackTrace();
 			}
 			
-			cont++;
+			contAchado++;
 			
 			try( FileWriter fw = new FileWriter(arquivo) ){
 			//	char c = (char)cont;
-			    fw.write(cont);
+			    fw.write(contAchado);
 			   
 			    fw.flush();
 			 //   fw.close();
