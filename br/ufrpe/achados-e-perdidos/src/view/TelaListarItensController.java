@@ -10,6 +10,7 @@ import java.util.Collection;
 
 import com.google.gson.Gson;
 
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -32,13 +33,13 @@ public class TelaListarItensController {
 	
 	@FXML private Button btVoltar;
 	@FXML private TableView tbView;
+	@FXML private TableColumn<Item, String> tcCat;
 	@FXML private TableColumn<Item, Integer> tcID;
 	@FXML private TableColumn<Item, String> tcTipo;
 	@FXML private TableColumn<Item, String> tcCor;
 	@FXML private TableColumn<Item, Integer> tcQtd;
 	@FXML private TableColumn<Item, String> tcDescricao = new TableColumn<Item, String>("Descricao");
-	@FXML private ListView listView;
-	@FXML private TextArea tAreaListar;
+	
 
 	
 	public void initialize(){
@@ -83,19 +84,15 @@ public class TelaListarItensController {
 		System.out.println(lista.size());
 		
 		
-	//	this.tcDescricao.setCellValueFactory(new PropertyValueFactory<Item, String>("Oi"));
-		for(Item listaDosItens: lista) {
-			temp.append(listaDosItens.status());
-			//this.tcID.setText(listaDosItens.getId());
-			//this.tcTipo.setText(listaDosItens.getTipo());
-			//this.tcCor.setText(listaDosItens.getCor());
-			//this.tcDescricao.setText(listaDosItens.getDescricao());
-	//		this.tcDescricao.setCellValueFactory(new PropertyValueFactory<Item, String>(listaDosItens.getDescricao()));
-			listaDosItens.status();
-			temp2 = temp.toString();
-			this.tAreaListar.setText(temp2);
-		}
+		tbView.setItems(FXCollections.observableArrayList(itens));
 		
+		
+		tcCat.setCellValueFactory(new PropertyValueFactory<Item,String>("categoria"));
+		tcID.setCellValueFactory(new PropertyValueFactory<Item,Integer>("id"));
+		tcTipo.setCellValueFactory(new PropertyValueFactory<Item,String>("tipo"));
+		tcCor.setCellValueFactory(new PropertyValueFactory<Item,String>("cor"));
+		tcQtd.setCellValueFactory(new PropertyValueFactory<Item,Integer>("quantidade"));
+		tcDescricao.setCellValueFactory(new PropertyValueFactory<Item,String>("descricao"));
 	
 
 		

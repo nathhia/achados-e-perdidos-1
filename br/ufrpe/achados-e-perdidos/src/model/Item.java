@@ -11,6 +11,7 @@ public class Item implements Serializable{
 	private String tipo;
 	private String cor;
 	private String descricao;
+	private String categoria;
 	private int quantidade;
 	private boolean achado;
 	private boolean perdido;
@@ -19,7 +20,7 @@ public class Item implements Serializable{
 	private Aluno aluno;
 	private String obs;
 	private Date data;
-	private Local local;
+
 	
 	
 	ArrayList nome = new ArrayList();
@@ -261,8 +262,15 @@ public class Item implements Serializable{
 		this.departamento = item.departamento;
 		this.aluno = item.aluno;
 		this.descricao = item.descricao;
-		if(item.perdido == true) item.achado = false;
-		else item.achado = true;
+		if(item.perdido == true)
+		{
+			this.setCategoria("Perdido");
+			item.achado = false;
+		}
+		else {
+			this.setCategoria("Achado");
+			item.achado = true;
+		} 
 		this.perdido = item. perdido;
 		this.achado = item.achado;
 		this.data = item.data;
@@ -284,6 +292,16 @@ public class Item implements Serializable{
 			return temp;	
 		}
 		
+	}
+
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
 	}
 
 }
