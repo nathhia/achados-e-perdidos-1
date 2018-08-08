@@ -42,7 +42,7 @@ public class TelaCadastroItemAchadoController {
 			String json;
 			
 			File arquivo = new File("cont.bin");
-			File arquivo2 = new File("cadastrados.json");
+			File arquivo2 = new File("cadastrados.txt");
 			
 			try( FileReader fr = new FileReader(arquivo) ){
 				
@@ -62,12 +62,14 @@ public class TelaCadastroItemAchadoController {
 			json = gson.toJson(itemAchado);
 		
 			
-			try( FileWriter fw = new FileWriter(arquivo2, true) ){
-			   
-					fw.write(json);
+			try{
 				
-			    fw.flush();
-			    fw.close();
+				FileWriter fw = new FileWriter(arquivo2, true);
+				BufferedWriter bw = new BufferedWriter(fw);
+				bw.write(json);
+				bw.newLine();
+				bw.close();
+			    
 			}catch(IOException ex){
 			  ex.printStackTrace();
 			}

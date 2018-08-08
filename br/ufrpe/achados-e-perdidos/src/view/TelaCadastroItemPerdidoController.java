@@ -43,7 +43,7 @@ public void initialize(){
 		String json;
 		
 		File arquivo1 = new File("cont.bin");
-		File arquivo3 = new File("cadastrados.json");
+		File arquivo3 = new File("cadastrados.txt");
 		
 		
 		try( FileReader fr = new FileReader(arquivo1) ){
@@ -62,14 +62,14 @@ public void initialize(){
 		itemTemp.setId(cont+200);
 		itemPerdido.cadastrarItem(itemTemp);
 		json = gson.toJson(itemPerdido);
-	
 		
-		try( FileWriter fw = new FileWriter(arquivo3, true) ){
-			
-				fw.write(json);
-		
-		    fw.flush();
-		    fw.close();
+		try{	
+			FileWriter fwo = new FileWriter(arquivo3, true);
+			BufferedWriter bwo = new BufferedWriter(fwo);
+			bwo.write(json);
+			bwo.newLine();
+			bwo.close();
+		    
 		}catch(IOException ex){
 		  ex.printStackTrace();
 		}
@@ -86,7 +86,7 @@ public void initialize(){
 		  ex.printStackTrace();
 		}
 		
-		Alert alert = new Alert(AlertType.ERROR);
+		Alert alert = new Alert(AlertType.INFORMATION);
 		alert.setTitle("Cadastrado!");
 		alert.setHeaderText("Cadastrado com sucesso!");
 		alert.setContentText("");

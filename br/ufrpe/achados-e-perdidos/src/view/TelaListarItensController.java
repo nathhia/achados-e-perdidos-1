@@ -44,11 +44,11 @@ public class TelaListarItensController {
 		int cont = 0;
 		File arquivo = new File("cont.bin");
 
-		File arquivo2 = new File("cadastrados.json");
+		File arquivo2 = new File("cadastrados.txt");
 
 		Gson gson = new Gson();
 		Item[] itens = new Item[100]; 
-		String[] json = new String[100];
+		String json;
 		Collection<Item> lista = new ArrayList();
 		
 		try( FileReader fr = new FileReader(arquivo) ){
@@ -65,24 +65,28 @@ public class TelaListarItensController {
 			BufferedReader br = new BufferedReader(new FileReader(arquivo2));
 			for(int i = 0; i<cont; i++) {
 				itens[i] = new Item();
-				itens[i] = gson.fromJson(br, Item.class);
+				json = new String();
+				json = br.readLine();
+				itens[i] = gson.fromJson(json, Item.class);
 				lista.add(itens[i]);
-				
+				System.out.println(json);
 			}
 			
 		}catch(IOException ex){
 		  ex.printStackTrace();
 		}
 		
+		
 		System.out.println(lista.size());
+		
 		
 		for(Item listaDosItens: lista) {
 			//this.tcID.setText(listaDosItens.getId());
-			this.tcTipo.setText(listaDosItens.getTipo());
-			this.tcCor.setText(listaDosItens.getCor());
+			//this.tcTipo.setText(listaDosItens.getTipo());
+			//this.tcCor.setText(listaDosItens.getCor());
 			//this.tcDescricao.setText(listaDosItens.getDescricao());
 			//this.tcDescricao.setCellFactory(Callback<, String>("descricaoProduto"));
-			
+			listaDosItens.status();
 		}
 		
 	
