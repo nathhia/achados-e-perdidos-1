@@ -35,18 +35,18 @@ public class TelaCadastroItemAchadoController {
 		this.main = Main.getInstancia();
 		this.btCadastrar.setOnAction(e ->{
 
-			Integer contAchado = 0;
+			Integer cont = 0;
 			Item itemTemp = new Item();
 			Item itemAchado = new Item();
 			Gson gson = new Gson();
 			String json;
 			
-			File arquivo = new File("contAchado.bin");
-			File arquivo2 = new File("achados.json");
+			File arquivo = new File("cont.bin");
+			File arquivo2 = new File("cadastrados.json");
 			
 			try( FileReader fr = new FileReader(arquivo) ){
 				
-				contAchado = fr.read();
+				cont = fr.read();
 			
 			}catch(IOException ex){
 			  ex.printStackTrace();
@@ -57,7 +57,7 @@ public class TelaCadastroItemAchadoController {
 			itemTemp.setCor(tfCor.getText());
 			itemTemp.setQuantidade(Integer.parseInt(tfQuantidade.getText()));
 			itemTemp.setDescricao(tfDescricao.getText());
-			itemTemp.setId(contAchado+100);
+			itemTemp.setId(cont+100);
 			itemAchado.cadastrarItem(itemTemp);
 			json = gson.toJson(itemAchado);
 		
@@ -72,20 +72,20 @@ public class TelaCadastroItemAchadoController {
 			  ex.printStackTrace();
 			}
 			
-			contAchado++;
+			cont++;
 			
 			try( FileWriter fw = new FileWriter(arquivo) ){
 			//	char c = (char)cont;
-			    fw.write(contAchado);
+			    fw.write(cont);
 			   
 			    fw.flush();
-			 //   fw.close();
+			    fw.close();
 			}catch(IOException ex){
 			  ex.printStackTrace();
 			}
 			
 			
-			Alert alert = new Alert(AlertType.ERROR);
+			Alert alert = new Alert(AlertType.INFORMATION);
 			alert.setTitle("Cadastrado!");
 			alert.setHeaderText("Cadastrado com sucesso!");
 			alert.setContentText("");

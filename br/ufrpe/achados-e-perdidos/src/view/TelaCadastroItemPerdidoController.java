@@ -36,19 +36,19 @@ public void initialize(){
 	this.main = Main.getInstancia();
 	this.btCadastrar.setOnAction(e ->{
 		
-		int contPerdido=0;	
+		int cont=0;	
 		Item itemTemp = new Item();
 		Item itemPerdido = new Item();
 		Gson gson = new Gson();
 		String json;
 		
-		File arquivo1 = new File("contPerdido.bin");
-		File arquivo3 = new File("perdidos.json");
+		File arquivo1 = new File("cont.bin");
+		File arquivo3 = new File("cadastrados.json");
 		
 		
 		try( FileReader fr = new FileReader(arquivo1) ){
 		
-			contPerdido = fr.read();
+			cont = fr.read();
 		
 		}catch(IOException ex){
 		  ex.printStackTrace();
@@ -59,7 +59,7 @@ public void initialize(){
 		itemTemp.setCor(tfCor.getText());
 		itemTemp.setQuantidade(Integer.parseInt(tfQuantidade.getText()));
 		itemTemp.setDescricao(tfDescricao.getText());
-		itemTemp.setId(contPerdido+200);
+		itemTemp.setId(cont+200);
 		itemPerdido.cadastrarItem(itemTemp);
 		json = gson.toJson(itemPerdido);
 	
@@ -74,11 +74,11 @@ public void initialize(){
 		  ex.printStackTrace();
 		}
 		
-		contPerdido++;
+		cont++;
 		
 		try( FileWriter fw = new FileWriter(arquivo1) ){
 			
-		    fw.write(contPerdido);
+		    fw.write(cont);
 		   
 		    fw.flush();
 		 //   fw.close();

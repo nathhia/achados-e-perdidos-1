@@ -2,8 +2,9 @@ package model;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.io.Serializable;
 
-public class Item {
+public class Item implements Serializable{
 	
 	private int id = 1;
 	private String tipo;

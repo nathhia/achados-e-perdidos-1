@@ -1,5 +1,6 @@
 package view;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -40,43 +41,32 @@ public class TelaListarItensController {
 	
 	public void initialize(){
 		
-		int contAchado = 0;
-		int contPerdido = 0;
-		File arquivo = new File("contAchado.bin");
-		File arquivo1 = new File("contPerdido.bin");
-		File arquivo2 = new File("achados.json");
-		File arquivo3 = new File("perdidos.json");
+		int cont = 0;
+		File arquivo = new File("cont.bin");
+
+		File arquivo2 = new File("cadastrados.json");
+
 		Gson gson = new Gson();
-		Item[] itensAchados = new Item[100]; 
-		Item[] itensPerdidos = new Item[100]; 
+		Item[] itens = new Item[100]; 
 		String[] json = new String[100];
 		Collection<Item> lista = new ArrayList();
 		
 		try( FileReader fr = new FileReader(arquivo) ){
 			
-			contAchado = fr.read();
-			contAchado = contAchado-48;
+			cont = fr.read();
+			cont = cont-48;
 			
 		}catch(IOException ex){
 		  ex.printStackTrace();
 		}
 		
-		try( FileReader fr = new FileReader(arquivo1) ){
-			
-			contPerdido = fr.read();
-			contPerdido = contAchado-48;
-			
-		}catch(IOException ex){
-		  ex.printStackTrace();
-		}
 		
-		try( FileReader fr = new FileReader(arquivo2) ){
-			
-			for(int i = 0; i<contAchado; i++) {
-				
-			//	json[i] = fr.getEncoding();
-				itensAchados[i] = gson.fromJson(fr, Item.class);
-				lista.add(itensAchados[i]);
+		try{
+			BufferedReader br = new BufferedReader(new FileReader(arquivo2));
+			for(int i = 0; i<cont; i++) {
+				itens[i] = new Item();
+				itens[i] = gson.fromJson(br, Item.class);
+				lista.add(itens[i]);
 				
 			}
 			
@@ -84,20 +74,7 @@ public class TelaListarItensController {
 		  ex.printStackTrace();
 		}
 		
-		try( FileReader fr = new FileReader(arquivo3) ){
-			
-			for(int i = 0; i<contAchado; i++) {
-				
-			//	json[i] = fr.getEncoding();
-				itensPerdidos[i] = gson.fromJson(fr, Item.class);
-				lista.add(itensPerdidos[i]);
-				
-			}
-			
-		}catch(IOException ex){
-		  ex.printStackTrace();
-		}
-		
+		System.out.println(lista.size());
 		
 		for(Item listaDosItens: lista) {
 			//this.tcID.setText(listaDosItens.getId());
