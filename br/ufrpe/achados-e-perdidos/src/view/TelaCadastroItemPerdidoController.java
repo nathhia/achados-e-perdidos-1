@@ -14,6 +14,7 @@ import java.io.BufferedReader;
 import com.google.gson.Gson;
 
 import model.Item;
+import model.TextFieldFormatter;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -117,5 +118,14 @@ public void retornar(){
 	}
 }
 
+//mascara de quantidade do item perdido
+@FXML
+public void tfQuantidadePerdidoKeyReleased() {
+	TextFieldFormatter tff = new TextFieldFormatter();
+	tff.setMask("#");
+	tff.setCaracteresValidos("0123456789");
+	tff.setTf(tfQuantidade);
+	tff.formatter();
+}
 
 }

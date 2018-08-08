@@ -12,6 +12,7 @@ import java.io.BufferedWriter;
 import java.io.BufferedReader;
 
 import model.Item;
+import model.TextFieldFormatter;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -117,6 +118,16 @@ public class TelaCadastroItemAchadoController {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
+	}
+	
+	//mascara de quantidade do item achado
+	@FXML
+	public void tfQuantidadeAchadoKeyReleased() {
+		TextFieldFormatter tff = new TextFieldFormatter();
+		tff.setMask("#");
+		tff.setCaracteresValidos("0123456789");
+		tff.setTf(tfQuantidade);
+		tff.formatter();
 	}
 	
 }
