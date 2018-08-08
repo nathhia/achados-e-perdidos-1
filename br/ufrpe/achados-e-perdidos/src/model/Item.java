@@ -6,6 +6,7 @@ import java.io.Serializable;
 
 public class Item implements Serializable{
 	
+	//atributos
 	private int id = 1;
 	private String tipo;
 	private String cor;
@@ -24,6 +25,7 @@ public class Item implements Serializable{
 	ArrayList nome = new ArrayList();
 
 
+	//getters e setters
 	public int getId() {
 		return id;
 	}
@@ -154,6 +156,7 @@ public class Item implements Serializable{
 	}
 
 
+	//tostring
 	@Override
 	public String toString() {
 		return "Item [id=" + id + ", cor=" + cor + ", descricao=" + descricao + ", quantidade=" + quantidade
@@ -162,6 +165,7 @@ public class Item implements Serializable{
 	}
 
 
+	//hashcode
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -182,6 +186,7 @@ public class Item implements Serializable{
 	}
 
 
+	//equals
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -240,12 +245,15 @@ public class Item implements Serializable{
 	
 	}
 	
+	
+	//incremeta id, ele a cada interação do cadastro incrimenta o id da interação anterios em mais 1
 	public int incrementaId()
 	{
 		return this.id + 1;
 	}
 	
 	
+	//cadatra o item
 	public boolean cadastrarItem(Item item){
 		this.tipo = item.tipo;
 		this.cor = item.cor;
@@ -262,6 +270,8 @@ public class Item implements Serializable{
 		return true;
 	}
 	
+	
+	//mostrat o status do item
 	public String status()
 	{
 		String temp; 
@@ -274,12 +284,6 @@ public class Item implements Serializable{
 			return temp;	
 		}
 		
-	//	System.out.println("Tipo: "+this.tipo);
-	//	System.out.println("Cor: "+this.cor);
-	//	System.out.println("Quantidade: "+this.quantidade);
-	//	System.out.println("Descricao: "+this.descricao);
-	//	System.out.println("Id: "+this.id);
-	//	System.out.println();
 	}
 
 }

@@ -1,14 +1,17 @@
 package model;
 
 public class Administrador extends Pessoa {
+	//atributos
 	private String login;
 	private String senha;
 	
-	
+	//tostring
 	@Override
 	public String toString() {
 		return "Administrador [login=" + login + ", senha=" + senha + "]";
 	}
+	
+	//hashcode
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -17,6 +20,8 @@ public class Administrador extends Pessoa {
 		result = prime * result + ((senha == null) ? 0 : senha.hashCode());
 		return result;
 	}
+	
+	//equals
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -38,6 +43,8 @@ public class Administrador extends Pessoa {
 			return false;
 		return true;
 	}
+	
+	//geters e setters
 	public String getLogin() {
 		return login;
 	}
@@ -51,6 +58,8 @@ public class Administrador extends Pessoa {
 		this.senha = senha;
 	}
 	
+	
+	//cadastro do administrador/
 	public boolean cadastrarAdministrador(String newName, String newEmail, String newCPF, String newTelefone, String newLogin, String newSenha ){
 		this.nome = newName;
 		this.email = newEmail;

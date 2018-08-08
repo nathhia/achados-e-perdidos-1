@@ -2,6 +2,8 @@ package model;
 
 public class Departamento {
 	
+	
+	//atributos
 	private String area;
 	private String sigla;
 	private int andar;;
@@ -9,6 +11,8 @@ public class Departamento {
 	public String getArea() {
 		return area;
 	}
+	
+	//getters e sstters
 	public void setArea(String area) {
 		this.area = area;
 	}
@@ -30,6 +34,8 @@ public class Departamento {
 	public void setSala(String sala) {
 		this.sala = sala;
 	}
+	
+	//hashcode
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -40,6 +46,8 @@ public class Departamento {
 		result = prime * result + ((sigla == null) ? 0 : sigla.hashCode());
 		return result;
 	}
+	
+	//equals
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -68,6 +76,8 @@ public class Departamento {
 			return false;
 		return true;
 	}
+	
+	//tostring
 	@Override
 	public String toString() {
 		return "Departamento [area=" + area + ", sigla=" + sigla + ", andar=" + andar + ", sala=" + sala + "]";

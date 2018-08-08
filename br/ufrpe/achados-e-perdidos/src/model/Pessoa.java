@@ -2,11 +2,13 @@ package model;
 
 public class Pessoa {
 	
+	//declaração de atributos
 	protected String nome;
     protected String email;
     protected String telefone;
     protected String cpf;
 
+    //tostring
     @Override
     public String toString() {
         return "Pessoa{" +
@@ -18,7 +20,7 @@ public class Pessoa {
     }
     
     
-
+    //equals
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -32,6 +34,7 @@ public class Pessoa {
         return cpf.equals(pessoa.cpf);
     }
     
+    //hashcode
     @Override
     public int hashCode() {
         int result = getNome().hashCode();
@@ -41,6 +44,7 @@ public class Pessoa {
         return result;
     }
 
+    //getters e setters
     public String getNome() {
         return nome;
     }

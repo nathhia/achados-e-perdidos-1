@@ -1,17 +1,19 @@
 package model;
 
 public class Aluno extends Pessoa{
-	
+	//atributos
 	private String login;
 	private String senha;
 	private String curso;
 	private int id = 10;
 	
-	
+	//to string
 	@Override
 	public String toString() {
 		return "Aluno [login=" + login + ", senha=" + senha + ", curso=" + curso + ", id=" + id + "]";
 	}
+	
+	//hashcode
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -22,6 +24,8 @@ public class Aluno extends Pessoa{
 		result = prime * result + ((senha == null) ? 0 : senha.hashCode());
 		return result;
 	}
+	
+	//equals
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -50,6 +54,8 @@ public class Aluno extends Pessoa{
 			return false;
 		return true;
 	}
+	
+	//getters setters
 	public String getLogin() {
 		return login;
 	}
@@ -75,7 +81,7 @@ public class Aluno extends Pessoa{
 		this.id = id;
 	}
 	
-	
+	//cadastrar aluno
 	public boolean cadastrarAluno(Aluno aluno){
 		this.nome = nome;
 		this.email = email;
