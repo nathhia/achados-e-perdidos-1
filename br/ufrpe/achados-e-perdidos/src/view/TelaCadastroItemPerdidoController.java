@@ -60,6 +60,8 @@ public void initialize(){
 		itemTemp.setQuantidade(Integer.parseInt(tfQuantidade.getText()));
 		itemTemp.setDescricao(tfDescricao.getText());
 		itemTemp.setId(cont+200);
+		itemTemp.setPerdido(true);
+		itemTemp.setAchado(false);
 		itemPerdido.cadastrarItem(itemTemp);
 		json = gson.toJson(itemPerdido);
 		

@@ -24,6 +24,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TableColumn;
 import javafx.stage.Stage;
 import model.Item;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class TelaListarItensController {
 	private Main main;
@@ -35,8 +36,9 @@ public class TelaListarItensController {
 	@FXML private TableColumn<Item, String> tcTipo;
 	@FXML private TableColumn<Item, String> tcCor;
 	@FXML private TableColumn<Item, Integer> tcQtd;
-	@FXML private TableColumn<Item, String> tcDescricao;
+	@FXML private TableColumn<Item, String> tcDescricao = new TableColumn<Item, String>("Descricao");
 	@FXML private ListView listView;
+	@FXML private TextArea tAreaListar;
 
 	
 	public void initialize(){
@@ -78,15 +80,18 @@ public class TelaListarItensController {
 		
 		
 		System.out.println(lista.size());
+		this.tAreaListar.setText(itens[0].status());
 		
-		
+		this.tcDescricao.setCellValueFactory(new PropertyValueFactory<Item, String>("Oi"));
 		for(Item listaDosItens: lista) {
 			//this.tcID.setText(listaDosItens.getId());
 			//this.tcTipo.setText(listaDosItens.getTipo());
 			//this.tcCor.setText(listaDosItens.getCor());
 			//this.tcDescricao.setText(listaDosItens.getDescricao());
-			//this.tcDescricao.setCellFactory(Callback<, String>("descricaoProduto"));
+			this.tcDescricao.setCellValueFactory(new PropertyValueFactory<Item, String>(listaDosItens.getDescricao()));
 			listaDosItens.status();
+		
+			
 		}
 		
 	

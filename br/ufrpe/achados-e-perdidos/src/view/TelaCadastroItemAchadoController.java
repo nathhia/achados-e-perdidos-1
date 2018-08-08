@@ -58,6 +58,8 @@ public class TelaCadastroItemAchadoController {
 			itemTemp.setQuantidade(Integer.parseInt(tfQuantidade.getText()));
 			itemTemp.setDescricao(tfDescricao.getText());
 			itemTemp.setId(cont+100);
+			itemTemp.setAchado(true);
+			itemTemp.setPerdido(false);
 			itemAchado.cadastrarItem(itemTemp);
 			json = gson.toJson(itemAchado);
 		

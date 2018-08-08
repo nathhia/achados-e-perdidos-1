@@ -262,16 +262,24 @@ public class Item implements Serializable{
 		return true;
 	}
 	
-	public void status()
+	public String status()
 	{
-		if(this.perdido == true) System.out.println("--Objeto perdido--");
-		else System.out.println("--Objeto encontrado--");
-		System.out.println("Tipo: "+this.tipo);
-		System.out.println("Cor: "+this.cor);
-		System.out.println("Quantidade: "+this.quantidade);
-		System.out.println("Descricao: "+this.descricao);
-		System.out.println("Id: "+this.id);
-		System.out.println();
+		String temp; 
+		if(this.perdido == true) {
+			temp = "--Objeto Perdido--"+"\n"+"Tipo: "+ this.tipo +"\n" + "Cor: "+this.cor+"\n"+"Quantidade: "+this.quantidade+"\n"+"Descricao: "+this.descricao+"\n"+"ID: "+this.id+"\n\n";
+			return temp;
+		}
+		else {
+			temp = "--Objeto Achado--"+"\n"+"Tipo: "+ this.tipo +"\n" + "Cor: "+this.cor+"\n"+"Quantidade: "+this.quantidade+"\n"+"Descricao: "+this.descricao+"\n"+"ID: "+this.id+"\n\n";
+			return temp;	
+		}
+		
+	//	System.out.println("Tipo: "+this.tipo);
+	//	System.out.println("Cor: "+this.cor);
+	//	System.out.println("Quantidade: "+this.quantidade);
+	//	System.out.println("Descricao: "+this.descricao);
+	//	System.out.println("Id: "+this.id);
+	//	System.out.println();
 	}
 
 }
