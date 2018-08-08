@@ -49,8 +49,9 @@ public class TelaListarItensController {
 		File arquivo2 = new File("cadastrados.txt");
 
 		Gson gson = new Gson();
-		Item[] itens = new Item[100]; 
-		String json;
+		Item[] itens = new Item[100];
+		StringBuffer temp = new StringBuffer();
+		String json, temp2;
 		Collection<Item> lista = new ArrayList();
 		
 		try( FileReader fr = new FileReader(arquivo) ){
@@ -80,18 +81,19 @@ public class TelaListarItensController {
 		
 		
 		System.out.println(lista.size());
-		this.tAreaListar.setText(itens[0].status());
 		
-		this.tcDescricao.setCellValueFactory(new PropertyValueFactory<Item, String>("Oi"));
+		
+	//	this.tcDescricao.setCellValueFactory(new PropertyValueFactory<Item, String>("Oi"));
 		for(Item listaDosItens: lista) {
+			temp.append(listaDosItens.status());
 			//this.tcID.setText(listaDosItens.getId());
 			//this.tcTipo.setText(listaDosItens.getTipo());
 			//this.tcCor.setText(listaDosItens.getCor());
 			//this.tcDescricao.setText(listaDosItens.getDescricao());
-			this.tcDescricao.setCellValueFactory(new PropertyValueFactory<Item, String>(listaDosItens.getDescricao()));
+	//		this.tcDescricao.setCellValueFactory(new PropertyValueFactory<Item, String>(listaDosItens.getDescricao()));
 			listaDosItens.status();
-		
-			
+			temp2 = temp.toString();
+			this.tAreaListar.setText(temp2);
 		}
 		
 	

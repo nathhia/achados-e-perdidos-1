@@ -20,6 +20,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
@@ -28,7 +29,7 @@ public class TelaCadastroItemPerdidoController {private Main main;
 @FXML private TextField tfTipo;
 @FXML private TextField tfCor;
 @FXML private TextField tfQuantidade;
-@FXML private TextField tfDescricao;
+@FXML private TextArea tAreaDescricao;
 @FXML private Button btCadastrar;
 @FXML private Button btVoltar;
 
@@ -58,8 +59,8 @@ public void initialize(){
 		itemTemp.setTipo(tfTipo.getText());
 		itemTemp.setCor(tfCor.getText());
 		itemTemp.setQuantidade(Integer.parseInt(tfQuantidade.getText()));
-		itemTemp.setDescricao(tfDescricao.getText());
-		itemTemp.setId(cont+200);
+		itemTemp.setDescricao(tAreaDescricao.getText());
+		itemTemp.setId(cont+200-48);
 		itemTemp.setPerdido(true);
 		itemTemp.setAchado(false);
 		itemPerdido.cadastrarItem(itemTemp);

@@ -18,6 +18,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
@@ -27,6 +28,7 @@ public class TelaCadastroItemAchadoController {
 	@FXML private TextField tfTipo;
 	@FXML private TextField tfCor;
 	@FXML private TextField tfQuantidade;
+	@FXML private TextArea tAreaDescricao;
 	@FXML private TextField tfDescricao;
 	@FXML private Button btCadastrar;
 	@FXML private Button btVoltar;
@@ -56,8 +58,8 @@ public class TelaCadastroItemAchadoController {
 			itemTemp.setTipo(tfTipo.getText());
 			itemTemp.setCor(tfCor.getText());
 			itemTemp.setQuantidade(Integer.parseInt(tfQuantidade.getText()));
-			itemTemp.setDescricao(tfDescricao.getText());
-			itemTemp.setId(cont+100);
+			itemTemp.setDescricao(tAreaDescricao.getText());
+			itemTemp.setId(cont+100-48);
 			itemTemp.setAchado(true);
 			itemTemp.setPerdido(false);
 			itemAchado.cadastrarItem(itemTemp);
