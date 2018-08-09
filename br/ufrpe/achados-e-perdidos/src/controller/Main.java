@@ -27,7 +27,7 @@ private static Main instancia;
 		instancia = this;
 		this.palcoPrincipal = primaryStage;
 		this.palcoPrincipal.setResizable(false);
-		this.palcoPrincipal.setTitle("Achados e perdidos - BetaVersion");
+		this.palcoPrincipal.setTitle("Achados e perdidos");
 		this.rootScene = new Pane();
 		
 		Scene scene = new Scene(this.rootScene,800,600);
@@ -56,5 +56,7 @@ private static Main instancia;
 	public Pane getRootScene(){
 		return this.rootScene;
 	}
-
+	public static void main(String[] args) {
+		launch(args);
+	} 
 }

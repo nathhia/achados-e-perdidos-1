@@ -6,10 +6,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import model.*;
 
@@ -50,6 +52,14 @@ public class TelaLoginController {
 				main = Main.getInstancia();
 				Stage stage;
 				Parent root;
+				if(tfCPF.getText().equals("")| pfSenha.getText().equals("")){
+					Alert alert = new Alert(AlertType.ERROR);
+					alert.setTitle("Erro!");
+					alert.setHeaderText("Login ou Senha invalidos!");
+					alert.setContentText("");
+					alert.showAndWait();
+					this.retornar();
+				}else {
 				try {
 					
 					stage=(Stage) btEntrar.getScene().getWindow();
@@ -61,7 +71,8 @@ public class TelaLoginController {
 				}catch(IOException e1) {
 					e1.printStackTrace();
 				}
-			});
+			}
+		});
 			
 			
 	}
@@ -75,5 +86,19 @@ public class TelaLoginController {
 			tff.setTf(tfCPF);
 			tff.formatter();
 		}
+		public void retornar(){
+			Stage stage;
+			Parent root;
+		try {
+			root = (Parent) FXMLLoader.load(getClass().getResource("/view/TelaLogin.fxml"));
+			Scene scene = new Scene(root);
+			stage = main.getPalcoPrincipal();
+			stage.setScene(scene);
+			main.changeStage(stage);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+	}
 	
 }
