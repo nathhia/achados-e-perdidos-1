@@ -20,6 +20,9 @@ public class TelaLoginController {
 	@FXML private Button btEntrar;
 	@FXML private Hyperlink hypCadastro;
 	
+	
+	
+	
 	public void initialize(){
 		this.main = Main.getInstancia();	
 			this.hypCadastro.setOnAction(e2 -> {
@@ -62,5 +65,15 @@ public class TelaLoginController {
 			
 			
 	}
+	
+	//mascara do campo cpf do login aceitar apenas numeros
+		@FXML 
+		public void tfCPFLoginKeyReleased() {
+			TextFieldFormatter tff = new TextFieldFormatter();
+			tff.setMask("###.###.###-##");
+			tff.setCaracteresValidos("0123456789");
+			tff.setTf(tfCPF);
+			tff.formatter();
+		}
 	
 }

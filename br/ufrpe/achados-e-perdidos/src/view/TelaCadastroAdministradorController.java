@@ -33,6 +33,8 @@ public class TelaCadastroAdministradorController {
 	@FXML private Button btCadastrar;
 	@FXML private Button btVoltar;
 	
+	
+	
 	public void initialize(){
 		this.main = Main.getInstancia();
 		this.btCadastrar.setOnAction(e ->{
@@ -119,4 +121,25 @@ public class TelaCadastroAdministradorController {
 	}
 	
 
+	//mascara do campo cpf cadastro ADM aceitar apenas numeros
+		@FXML
+		public void tfCPFAdmKeyReleased() {
+			TextFieldFormatter tff = new TextFieldFormatter();
+			tff.setMask("###.###.###-##");
+			tff.setCaracteresValidos("0123456789");
+			tff.setTf(tfCPF);
+			tff.formatter();
+		}
+		
+		
+	//mascara do campo telefone cadastro ADM aceitar apenas numeros
+		@FXML
+		public void tfTelefoneAdmKeyReleased() {
+			TextFieldFormatter tff = new TextFieldFormatter();
+			tff.setMask("(##)#####-####");
+			tff.setCaracteresValidos("0123456789");
+			tff.setTf(tfTelefone);
+			tff.formatter();
+		}
+	
 }

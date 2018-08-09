@@ -29,7 +29,7 @@
             <Font name="Agency FB" size="40.0" />
          </font>
       </Text>
-      <TextField fx:id="tfCPF" layoutX="239.0" layoutY="246.0" prefHeight="38.0" prefWidth="335.0">
+      <TextField fx:id="tfCPF" layoutX="239.0" layoutY="246.0" onKeyReleased="#tfCPFLoginKeyReleased" prefHeight="38.0" prefWidth="335.0">
          <font>
             <Font size="15.0" />
          </font>

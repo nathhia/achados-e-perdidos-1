@@ -49,32 +49,32 @@
             <Font name="Agency FB" size="40.0" />
          </font>
       </Text>
-      <TextField fx:id="tfNome" layoutX="178.0" layoutY="111.0" prefHeight="36.0" prefWidth="600.0">
+      <TextField fx:id="tfNome" layoutX="204.0" layoutY="111.0" prefHeight="36.0" prefWidth="534.0">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
-      <TextField fx:id="tfEmail" layoutX="177.0" layoutY="180.0" prefHeight="36.0" prefWidth="600.0">
+      <TextField fx:id="tfEmail" layoutX="203.0" layoutY="180.0" prefHeight="36.0" prefWidth="534.0">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
-      <TextField fx:id="tfCPF" layoutX="176.0" layoutY="252.0" prefHeight="36.0" prefWidth="261.0">
+      <TextField fx:id="tfCPF" layoutX="207.0" layoutY="252.0" onKeyReleased="#tfCPFAdmKeyReleased" prefHeight="36.0" prefWidth="221.0">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
-      <TextField fx:id="tfTelefone" layoutX="207.0" layoutY="318.0" prefHeight="36.0" prefWidth="245.0">
+      <TextField fx:id="tfTelefone" layoutX="207.0" layoutY="318.0" onKeyReleased="#tfTelefoneAdmKeyReleased" prefHeight="36.0" prefWidth="221.0">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
-      <TextField fx:id="tfLogin" layoutX="176.0" layoutY="388.0" prefHeight="36.0" prefWidth="245.0">
+      <TextField fx:id="tfLogin" layoutX="207.0" layoutY="389.0" prefHeight="36.0" prefWidth="221.0">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
-      <PasswordField fx:id="pfSenha" layoutX="185.0" layoutY="461.0" prefHeight="36.0" prefWidth="230.0">
+      <PasswordField fx:id="pfSenha" layoutX="209.0" layoutY="457.0" prefHeight="36.0" prefWidth="221.0">
          <font>
             <Font size="15.0" />
          </font>
