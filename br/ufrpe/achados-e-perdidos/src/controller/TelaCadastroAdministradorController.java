@@ -1,4 +1,4 @@
-package view;
+package controller;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -20,8 +20,8 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import model.*;
 
-public class TelaCadastroAlunoController {
-	
+
+public class TelaCadastroAdministradorController {
 	private Main main;
 
 	@FXML private TextField tfNome;
@@ -33,42 +33,42 @@ public class TelaCadastroAlunoController {
 	@FXML private Button btCadastrar;
 	@FXML private Button btVoltar;
 	
+	
+	
 	public void initialize(){
 		this.main = Main.getInstancia();
 		this.btCadastrar.setOnAction(e ->{
 
-
-			File arquivo = new File("contAluno.bin");
-			File arquivo2 = new File("alunos.json");
+			File arquivo = new File("contAdm.bin");
+			File arquivo2 = new File("administradores.json");
 			
-			Integer contAluno = 0;
-			Aluno alunoTemp = new Aluno();
-			Aluno aluno = new Aluno();
+			Integer contAdm = 0;
+			Administrador administradorTemp = new Administrador();
+			Administrador adm = new Administrador();
 			Gson gson = new Gson();
 			String json;
 			
 			
+			
 			try( FileReader fr = new FileReader(arquivo) ){
 				
-				contAluno = fr.read();
+				contAdm = fr.read();
 			
 			}catch(IOException ex){
 			  ex.printStackTrace();
 			}
 			
 					
-			alunoTemp.setNome(tfNome.getText());
-			alunoTemp.setEmail(tfEmail.getText());
-			alunoTemp.setCpf(tfCPF.getText());
-			alunoTemp.setTelefone(tfTelefone.getText());
-			alunoTemp.setLogin(tfLogin.getText());
-			alunoTemp.setSenha(pfSenha.getText());
-			alunoTemp.setId(contAluno);
-			aluno.cadastrarAluno(alunoTemp);
-			json = gson.toJson(aluno);
-			contAluno++;
+			administradorTemp.setNome(tfNome.getText());
+			administradorTemp.setEmail(tfEmail.getText());
+			administradorTemp.setCpf(tfCPF.getText());
+			administradorTemp.setTelefone(tfTelefone.getText());
+			administradorTemp.setLogin(tfLogin.getText());
+			administradorTemp.setSenha(pfSenha.getText());
+			adm.cadastrarAdministrador(administradorTemp);
+			json = gson.toJson(adm);
 			
-			
+			contAdm++;
 			
 			try{
 				
@@ -83,7 +83,7 @@ public class TelaCadastroAlunoController {
 			}
 			
 			try( FileWriter fw = new FileWriter(arquivo) ){
-			    fw.write(contAluno);
+			    fw.write(contAdm);
 			   
 			    fw.flush();
 			 //   fw.close();
@@ -121,25 +121,25 @@ public class TelaCadastroAlunoController {
 	}
 	
 
-	
-	//mascara do campo cpf cadastro aluno aceitar apenas numeros
-			@FXML
-			public void tfCPFAlunoKeyReleased() {
-				TextFieldFormatter tff = new TextFieldFormatter();
-				tff.setMask("###.###.###-##");
-				tff.setCaracteresValidos("0123456789");
-				tff.setTf(tfCPF);
-				tff.formatter();
-			}
-			
+	//mascara do campo cpf cadastro ADM aceitar apenas numeros
+		@FXML
+		public void tfCPFAdmKeyReleased() {
+			TextFieldFormatter tff = new TextFieldFormatter();
+			tff.setMask("###.###.###-##");
+			tff.setCaracteresValidos("0123456789");
+			tff.setTf(tfCPF);
+			tff.formatter();
+		}
+		
+		
 	//mascara do campo telefone cadastro ADM aceitar apenas numeros
-			@FXML
-			public void tfTelefoneAlunoKeyReleased() {
-				TextFieldFormatter tff = new TextFieldFormatter();
-				tff.setMask("(##)#####-####");
-				tff.setCaracteresValidos("0123456789");
-				tff.setTf(tfTelefone);
-				tff.formatter();
-			}
-
+		@FXML
+		public void tfTelefoneAdmKeyReleased() {
+			TextFieldFormatter tff = new TextFieldFormatter();
+			tff.setMask("(##)#####-####");
+			tff.setCaracteresValidos("0123456789");
+			tff.setTf(tfTelefone);
+			tff.formatter();
+		}
+	
 }
