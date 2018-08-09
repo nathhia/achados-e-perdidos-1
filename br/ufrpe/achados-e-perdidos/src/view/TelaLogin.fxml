@@ -7,10 +7,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.TelaLoginController">
    <children>
-      <ImageView fitHeight="600.0" fitWidth="800.0" layoutX="-8.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="620.0" fitWidth="820.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../plano%20de%20fundo%20das%20telas.png" />
          </image>
@@ -20,27 +19,33 @@
             <Font name="Agency FB" size="57.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="122.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPF:">
+      <Text fill="WHITE" layoutX="153.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPF:">
          <font>
             <Font name="Agency FB" size="40.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="84.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SENHA:">
+      <Text fill="WHITE" layoutX="117.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SENHA:">
          <font>
             <Font name="Agency FB" size="40.0" />
          </font>
       </Text>
-      <TextField fx:id="tfCPF" layoutX="211.0" layoutY="246.0" prefHeight="44.0" prefWidth="334.0">
+      <TextField fx:id="tfCPF" layoutX="239.0" layoutY="246.0" prefHeight="38.0" prefWidth="335.0">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
-      <PasswordField fx:id="pfSenha" layoutX="211.0" layoutY="307.0" prefHeight="44.0" prefWidth="336.0">
+      <PasswordField fx:id="pfSenha" layoutX="239.0" layoutY="309.0" prefHeight="38.0" prefWidth="335.0">
          <font>
             <Font size="15.0" />
          </font>
       </PasswordField>
-      <Button fx:id="btEntrar" layoutX="449.0" layoutY="409.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="98.0" text="Entrar" />
-      <Hyperlink fx:id="hyCadastro" layoutX="277.0" layoutY="371.0" text="Não é cadastrado? Cadastre-se aqui!" textFill="#f8f8f8" />
+      <Button fx:id="btEntrar" layoutX="352.0" layoutY="455.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="98.0" text="Entrar">
+         <font>
+            <Font name="Agency FB" size="27.0" />
+         </font></Button>
+      <Hyperlink fx:id="hypCadastro" layoutX="260.0" layoutY="371.0" text="Não é cadastrado? Cadastre-se aqui!" textFill="#f8f8f8">
+         <font>
+            <Font size="17.0" />
+         </font></Hyperlink>
    </children>
 </AnchorPane>

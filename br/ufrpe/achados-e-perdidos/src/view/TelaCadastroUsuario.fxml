@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.TelaCadastroUsuarioController">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../plano%20de%20fundo%20das%20telas.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="250.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CADASTRO USUARIO">
+         <font>
+            <Font name="Agency FB" size="50.0" />
+         </font>
+      </Text>
+      <Button fx:id="btAluno" layoutX="202.0" layoutY="248.0" mnemonicParsing="false" text="Aluno">
+         <font>
+            <Font name="Agency FB" size="28.0" />
+         </font>
+      </Button>
+      <Button fx:id="btAdministrador" layoutX="435.0" layoutY="248.0" mnemonicParsing="false" text="Administrador">
+         <font>
+            <Font name="Agency FB" size="27.0" />
+         </font>
+      </Button>
+      <Button fx:id="btVoltar" layoutX="57.0" layoutY="502.0" mnemonicParsing="false" text="Voltar">
+         <font>
+            <Font name="Agency FB" size="27.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

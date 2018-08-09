@@ -60,13 +60,13 @@ public class Administrador extends Pessoa {
 	
 	
 	//cadastro do administrador/
-	public boolean cadastrarAdministrador(String newName, String newEmail, String newCPF, String newTelefone, String newLogin, String newSenha ){
-		this.nome = newName;
-		this.email = newEmail;
-		this.cpf = newCPF;
-		this.telefone = newTelefone;
-		this.login = newLogin;
-		this.senha = newSenha;
+	public boolean cadastrarAdministrador(Administrador adm ){
+		this.nome = adm.nome;
+		this.email = adm.email;
+		this.cpf = adm.cpf;
+		this.telefone = adm.telefone;
+		this.login = adm.login;
+		this.senha = adm.senha;
 		return true;
 	}
 

@@ -39,7 +39,7 @@ private static Main instancia;
 	private void openTelaInicial(){
 		try{
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("/view/TelaInicial.fxml"));
+			loader.setLocation(getClass().getResource("/view/TelaLogin.fxml"));
 			Pane pane = (Pane) loader.load();
 			
 			this.rootScene.getChildren().add(pane);

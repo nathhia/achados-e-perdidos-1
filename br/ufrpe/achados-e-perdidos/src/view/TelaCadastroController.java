@@ -16,8 +16,6 @@ public class TelaCadastroController {
 	@FXML private Button btItemPerdido;
 	@FXML private Button btVoltar;
 	
-	
-	//inicializa a tela
 	public void initialize(){
 		this.main = Main.getInstancia();	
 			this.btItemPerdido.setOnAction(e2 -> {
@@ -26,6 +24,7 @@ public class TelaCadastroController {
 				 Parent root;
 				 
 				 try{
+					 
 					 stage=(Stage) btItemPerdido.getScene().getWindow();
 					 root = (Parent) FXMLLoader.load(getClass().getResource("/view/TelaCadastroItemPerdido.fxml"));
 					 Scene scene = new Scene(root);

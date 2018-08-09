@@ -5,7 +5,7 @@ public class Aluno extends Pessoa{
 	private String login;
 	private String senha;
 	private String curso;
-	private int id = 10;
+	private int id = 0;
 	
 	//to string
 	@Override
@@ -83,13 +83,13 @@ public class Aluno extends Pessoa{
 	
 	//cadastrar aluno
 	public boolean cadastrarAluno(Aluno aluno){
-		this.nome = nome;
-		this.email = email;
-		this.cpf = cpf;
-		this.telefone = telefone;
-		this.login = login;
-		this.senha = senha;
-		this.id = id;
+		this.nome = aluno.nome;
+		this.email = aluno.email;
+		this.cpf = aluno.cpf;
+		this.telefone = aluno.telefone;
+		this.login = aluno.login;
+		this.senha = aluno.senha;
+		this.id = aluno.id-48;
 		id++;
 		return true;
 	}

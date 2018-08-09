@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.TelaCadastroAlunoController">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../plano%20de%20fundo%20das%20telas.png" />
+         </image>
+      </ImageView>
+      <Text fill="#ebebeb" layoutX="247.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CADASTRO ALUNO">
+         <font>
+            <Font name="Agency FB" size="50.0" />
+         </font>
+      </Text>
+      <Text fill="#fcfcfc" layoutX="82.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome:">
+         <font>
+            <Font name="Agency FB" size="40.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="82.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:">
+         <font>
+            <Font name="Agency FB" size="40.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="82.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPF:">
+         <font>
+            <Font name="Agency FB" size="40.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="82.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefone:">
+         <font>
+            <Font name="Agency FB" size="40.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="82.0" layoutY="417.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login:">
+         <font>
+            <Font name="Agency FB" size="40.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="82.0" layoutY="491.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha:">
+         <font>
+            <Font name="Agency FB" size="40.0" />
+         </font>
+      </Text>
+      <TextField fx:id="tfNome" layoutX="178.0" layoutY="111.0" prefHeight="36.0" prefWidth="600.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfEmail" layoutX="177.0" layoutY="180.0" prefHeight="36.0" prefWidth="600.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfCPF" layoutX="176.0" layoutY="252.0" prefHeight="36.0" prefWidth="261.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfTelefone" layoutX="207.0" layoutY="318.0" prefHeight="36.0" prefWidth="245.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfLogin" layoutX="176.0" layoutY="388.0" prefHeight="36.0" prefWidth="245.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <PasswordField fx:id="pfSenha" layoutX="185.0" layoutY="461.0" prefHeight="36.0" prefWidth="230.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </PasswordField>
+      <Button fx:id="btVoltar" layoutX="75.0" layoutY="524.0" mnemonicParsing="false" text="Voltar">
+         <font>
+            <Font name="Agency FB" size="27.0" />
+         </font>
+      </Button>
+      <Button fx:id="btCadastrar" layoutX="617.0" layoutY="524.0" mnemonicParsing="false" text="Cadastrar">
+         <font>
+            <Font name="Agency FB" size="27.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
