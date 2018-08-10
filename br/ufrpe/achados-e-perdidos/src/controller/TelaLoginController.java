@@ -17,7 +17,7 @@ import model.*;
 
 public class TelaLoginController {
 	private Main main;
-	@FXML private TextField tfCPF;
+	@FXML private TextField tfLogin;
 	@FXML private PasswordField pfSenha;
 	@FXML private Button btEntrar;
 	@FXML private Hyperlink hypCadastro;
@@ -52,7 +52,7 @@ public class TelaLoginController {
 				main = Main.getInstancia();
 				Stage stage;
 				Parent root;
-				if(tfCPF.getText().equals("")| pfSenha.getText().equals("")){
+				if(tfLogin.getText().equals("")| pfSenha.getText().equals("")){
 					Alert alert = new Alert(AlertType.ERROR);
 					alert.setTitle("Erro!");
 					alert.setHeaderText("Login ou Senha invalidos!");
@@ -77,15 +77,6 @@ public class TelaLoginController {
 			
 	}
 	
-	//mascara do campo cpf do login aceitar apenas numeros
-		@FXML 
-		public void tfCPFLoginKeyReleased() {
-			TextFieldFormatter tff = new TextFieldFormatter();
-			tff.setMask("###.###.###-##");
-			tff.setCaracteresValidos("0123456789");
-			tff.setTf(tfCPF);
-			tff.formatter();
-		}
 		public void retornar(){
 			Stage stage;
 			Parent root;
